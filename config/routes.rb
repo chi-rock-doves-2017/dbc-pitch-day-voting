@@ -5,4 +5,7 @@ Rails.application.routes.draw do
 
   get '/users', to: 'users#index'
   get "/auth/github/callback", to: "users#create", as: :create
+
+
+  resources :pitches, only: [:new, :index, :create]
 end

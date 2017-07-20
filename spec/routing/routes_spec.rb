@@ -7,4 +7,10 @@ RSpec.describe "Routing", type: :routing do
       expect(get: '/pitches').to route_to('pitches#index')
     end
   end
+
+  context 'pitches' do
+    it "routes '/pitches/new' to pitches#new" do
+      expect(get: '/pitches/new').to route_to('pitches#new')
+    end
+  end
 end
