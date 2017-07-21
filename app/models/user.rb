@@ -11,7 +11,7 @@ class User < ApplicationRecord
   def self.find_or_create_from_auth(auth)
     nickname = auth['info']['nickname']
     valid_user = ValidUser.find_by(nickname: nickname)
-    
+
    # byebug
 
     if valid_user
@@ -28,5 +28,13 @@ class User < ApplicationRecord
     else
       false
     end
+  end
+
+  def staff?
+    self.cohort.name == 'Staff'
+  end
+
+  def phase_3?
+    Date.today.between?(self.cohort.start + 15.weeks, self.cohort.end)
   end
 end
