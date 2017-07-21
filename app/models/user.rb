@@ -1,6 +1,8 @@
 class User < ApplicationRecord
+
   belongs_to :cohort
   has_many :pitches
+
   has_many :votes, foreign_key: 'voter_id'
 
   def self.find_or_create_from_auth(auth)

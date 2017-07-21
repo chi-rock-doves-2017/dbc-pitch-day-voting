@@ -16,7 +16,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Dotenv::Railtie.load
+# Dotenv::Railtie.load
 
 module DbcPitchDayVoting
   class Application < Rails::Application
@@ -29,5 +29,8 @@ module DbcPitchDayVoting
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   end
 end

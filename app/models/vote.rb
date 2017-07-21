@@ -10,7 +10,6 @@ class Vote < ApplicationRecord
       .first
       higher_vote = Vote.find_by(rank: self.rank - 1)
       self.rank, higher_vote.rank = higher_vote.rank, self.rank
-      byebug
       self.save
       higher_vote.save
     end
