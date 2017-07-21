@@ -1,38 +1,42 @@
-<h2>Admin Panel</h2>
+<div class="header">
+  <h2>Admin Panel</h2>
+</div>
 
+<div class="pitches-container">
   <%= form_for @cohort do |f| %>
     <%= f.hidden_field :admin_action, :value => :pitch_end %>
     <%= f.hidden_field :id, :value => @cohort.id %>
-    <%= f.submit 'End Pitch Day', id: 'end-pitch-day' %>
+    <%= f.submit 'End Pitch Day', id: 'end-pitch-day', class: 'button-primary button--teal margin' %>
   <% end %>
 
   <%= form_for @cohort do |f| %>
     <%= f.hidden_field :admin_action, :value => :pitch_start %>
     <%= f.hidden_field :id, :value => @cohort.id %>
-    <%= f.submit 'Start Pitch Day', id: 'start-pitch-day' %>
+    <%= f.submit 'Start Pitch Day', id: 'start-pitch-day', class: 'button-primary button--teal margin' %>
   <% end %>
 
 <%= form_for @cohort do |f| %>
   <%= f.hidden_field :admin_action, :value => :round_one_voting_start %>
   <%= f.hidden_field :id, :value => @cohort.id %>
-  <%= f.submit 'Start Round One Voting', id: 'start-round-one-voting', class: 'button-primary button--teal' %>
+  <%= f.submit 'Start Round One Voting', id: 'start-round-one-voting', class: 'button-primary button--teal margin' %>
 <% end %>
 
 <%= form_for @cohort do |f| %>
   <%= f.hidden_field :admin_action, :value => :round_one_voting_end %>
   <%= f.hidden_field :id, :value => @cohort.id %>
-  <%= f.submit 'End Round One Voting', id: 'end-round-one-voting', class: 'button-primary button--teal' %>
+  <%= f.submit 'End Round One Voting', id: 'end-round-one-voting', class: 'button-primary button--teal margin' %>
 <% end %>
 
 
 <%= form_for @cohort do |f| %>
   <%= f.hidden_field :admin_action, :value => :round_two_voting_start %>
   <%= f.hidden_field :id, :value => @cohort.id %>
-  <%= f.submit 'Start Round Two Voting', id: 'start-round-two-voting', class: 'button-primary button--teal' %>
+  <%= f.submit 'Start Round Two Voting', id: 'start-round-two-voting', class: 'button-primary button--teal margin' %>
 <% end %>
 
 <%= form_for @cohort do |f| %>
   <%= f.hidden_field :admin_action, :value => :round_two_voting_end %>
   <%= f.hidden_field :id, :value => @cohort.id %>
-  <%= f.submit 'End Round Two Voting', id: 'end-round-two-voting', class: 'button-primary button--teal' %>
+  <%= f.submit 'End Round Two Voting', id: 'end-round-two-voting', class: 'button-primary button--teal margin' %>
 <% end %>
+</div>
