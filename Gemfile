@@ -46,6 +46,7 @@ group :development, :test do
   gem 'faker'
   gem 'rails-controller-testing'
   gem 'awesome_print'
+
 end
 
 group :development do
