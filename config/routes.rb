@@ -11,4 +11,8 @@ Rails.application.routes.draw do
 
   get "/auth/github/callback", to: "sessions#create"
   delete "/logout", to: "sessions#delete"
+
+  get '/votes', to: 'votes#index'
+  post '/votes', to: 'votes#create'
+  patch '/votes', to: 'votes#update'
 end

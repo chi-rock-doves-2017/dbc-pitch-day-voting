@@ -31,6 +31,7 @@ gem 'octokit', "~> 4.0"
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'capybara'
+gem 'jquery-rails'
 
 
 # Use Capistrano for deployment
@@ -44,7 +45,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'faker'
   gem 'rails-controller-testing'
-
+  gem 'awesome_print'
 end
 
 group :development do
