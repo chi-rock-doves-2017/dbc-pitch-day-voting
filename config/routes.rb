@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/admin', to: "admin#index"
 
-  post '/cohort', to: "cohort#update"
+  patch '/cohort', to: "cohort#update", as: :cohort
 
   get "/auth/github/callback", to: "sessions#create"
   delete "/logout", to: "sessions#delete"

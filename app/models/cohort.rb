@@ -6,7 +6,15 @@ class Cohort < ApplicationRecord
     Date.today.between?(self.start + 9.weeks, self.end)
   end
 
-  def find_phase_3
-    if Date.today.between?(self.start + 15.weeks, self.end)
+  def phase_3?
+    Date.today.between?(self.start + 15.weeks, self.end)
+  end
+
+  def self.current_cohort
+    Cohort.all.each do |cohort|
+     if cohort.phase_3?
+        return cohort.name
+      end
+    end
   end
 end
