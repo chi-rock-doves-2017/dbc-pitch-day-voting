@@ -9,7 +9,8 @@ class PitchesController < ApplicationController
 
   def create
     @pitch = Pitch.new(pitch_params)
-    @pitch.cohort = Cohort.find_by(name: Cohort.current_cohort)
+    @pitch.cohort = Cohort.current_cohort
+    @pitch.user = current_user
 
     if @pitch.save
       redirect_to pitches_path, notice: 'pitch was successfully created.'
@@ -20,6 +21,6 @@ class PitchesController < ApplicationController
 
   private
   def pitch_params
-    params.require(:pitch).permit(:title, :description, :pitchers, :user_id)
+    params.require(:pitch).permit(:title, :description, :pitchers)
   end
 end
