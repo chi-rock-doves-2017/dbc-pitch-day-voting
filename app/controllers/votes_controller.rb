@@ -13,7 +13,7 @@ class VotesController < ApplicationController
 
   def update
     @vote = Vote.find(params[:vote_id])
-    if params[:change_value] == 1
+    if params[:change_value] == '1'
       @vote.rank_up
     else
       @vote.rank_down
