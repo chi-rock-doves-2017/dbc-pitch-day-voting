@@ -8,6 +8,6 @@ alycit = User.create(nickname: "alycit", name: "tom tom", email: "a@tom.com", ui
     description: "Wow!",
     pitchers: alycit.nickname,
     user: alycit,
-    cohort: Cohort.find_by(name: Cohort.current_cohort)
+    cohort: Cohort.current_cohort
     )
 end

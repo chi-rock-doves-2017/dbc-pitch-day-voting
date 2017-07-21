@@ -33,7 +33,6 @@ class User < ApplicationRecord
     self.votes
   end
 
-
   def staff?
     self.cohort.name == 'Staff'
   end

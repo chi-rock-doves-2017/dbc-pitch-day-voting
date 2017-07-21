@@ -1,20 +1,20 @@
-<div id="vote<%=vote_pitch.id%>" class="vote-container">
-	<%= render 'pitches/pitch', pitch: vote_pitch %>
-	<div id="hide-button-pitch<%=vote_pitch.id%>" class="hide-button-container">
+<div id="vote<%=vote.id%>" class="vote-container">
+	<%= render 'pitches/pitch', pitch: vote.pitch %>
+	<div id="hide-button-pitch<%=vote.id%>" class="hide-button-container">
 		<%= form_tag('/votes', method: :post) do %>
-			<%= check_box_tag("hide#{vote_pitch.id}") %>
-			<%= label_tag("hide#{vote_pitch.id}", "Hide") %>
+			<%= check_box_tag("hide#{vote.id}") %>
+			<%= label_tag("hide#{vote.id}", "Hide") %>
 		<% end %>
 	</div>
-	<div id="rank-buttons-pitch<%=vote_pitch.id%>" class="rank-buttons-container">
+	<div id="rank-buttons-pitch<%=vote.id%>" class="rank-buttons-container">
 		<%= form_tag('/votes', method: :patch, class: "up-vote-button") do %>
-			<%= hidden_field_tag "pitch_id", "#{vote_pitch.id}" %>
-		<!-- 	<#%= hidden_field_tag "change_value", "1" %> -->
+			<%= hidden_field_tag "vote_id", "#{vote.id}" %>
+			<%= hidden_field_tag "change_value", "1" %>
 			<%= submit_tag("Up") %>
 		<% end %>
 		<%= form_tag('/votes', method: :patch, class: "down-vote-button") do %>
-			<%= hidden_field_tag "pitch_id", "#{vote_pitch.id}" %>
-			<!-- <#%= hidden_field_tag "change_value", "-1" %> -->
+			<%= hidden_field_tag "vote_id", "#{vote.id}" %>
+			<%= hidden_field_tag "change_value", "-1" %>
 			<%= submit_tag("Down") %>
 		<% end %>
 	</div>
