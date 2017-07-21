@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= 
  */
 
 .container {
@@ -29,7 +30,8 @@ h1.welcome {
 	margin: 0;
   	text-align: center;
 	font-size: 200px;
-  	/*border: black dotted 1px;*/
+	color: #117880;
+	font-family: 'Comfortaa', cursive;
 }
 
 p.welcome {
@@ -38,5 +40,57 @@ p.welcome {
 	grid-column: 2;
 	grid-row: 1;
 	font-size: 36px;
-	/*border: black dotted 1px;*/
+}
+
+.body-background {
+	background-color: #E6F6F8;
+}
+
+.new-pitch-container {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.header {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 50px;
+    text-align: center;
+}
+
+.new-pitch-container input {
+    width: 100%;
+    margin: 10px 0 10px 0;
+}
+
+.pitches-container {
+    margin: 5%;
+}
+
+.pitch-container {
+    background-color: #BDDDE1;
+    margin: 30px 10px;
+}
+
+.pitch-padding {
+    padding: 5px 10px;
+    font-size: larger;
+}
+
+.margin {
+    margin: 10px;
+}
+
+.vote-item {
+	margin: 5px;
+	padding: 5px;
+}
+
+h2.pitch-padding {
+    font-size: xx-large;
+}
+
+.vote {
+	margin: 5px;
 }
