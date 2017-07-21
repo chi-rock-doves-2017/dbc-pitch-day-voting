@@ -52,7 +52,45 @@ p.welcome {
     margin-top: 100px;
 }
 
+.header {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 50px;
+    text-align: center;
+}
+
 .new-pitch-container input {
     width: 100%;
     margin: 10px 0 10px 0;
+}
+
+.pitches-container {
+    margin: 5%;
+}
+
+.pitch-container {
+    background-color: #BDDDE1;
+    margin: 30px 10px;
+}
+
+.pitch-padding {
+    padding: 5px 10px;
+    font-size: larger;
+}
+
+.margin {
+    margin: 10px;
+}
+
+.vote-item {
+	margin: 5px;
+	padding: 5px;
+}
+
+h2.pitch-padding {
+    font-size: xx-large;
+}
+
+.vote {
+	margin: 5px;
 }
