@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Pitch' do
-  let(:user) { User.create(nickname: "tom", name: "tom tom", email: "tom@tom.com", uid: "123456", provider: "github", token: "654321")}
+  let(:user) { User.create(nickname: "dhnaranjo", name: "tom tom", email: "tom@tom.com", uid: "123456", provider: "github", token: "654321", cohort: Cohort.find_by(name: 'Rock Doves'))}
 
   it "A user can create a pitch" do
     expect(user.pitches.new(title: "FakeApp Idea", description: "This is an app.", pitchers: "tom, tim, tim tom")).to be_a_new Pitch

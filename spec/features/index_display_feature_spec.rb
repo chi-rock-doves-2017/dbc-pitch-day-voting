@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'index content display' do
-   let(:user) { User.create(nickname: "tom", name: "tom tom", email: "tom@tom.com", uid: "123456", provider: "github", token: "654321") }
+  let(:user) { User.create(nickname: "dhnaranjo", name: "tom tom", email: "tom@tom.com", uid: "123456", provider: "github", token: "654321", cohort: Cohort.find_by(name: "Rock Doves")) }
 
   context 'when a user is logged in' do
     scenario 'sees pitches on the index' do

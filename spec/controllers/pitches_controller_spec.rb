@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe PitchesController do
-  let(:user) { User.create(nickname: "tom", name: "tom tom", email: "tom@tom.com", uid: "123456", provider: "github", token: "654321") }
+  let(:user) { User.create(nickname: "dhnaranjo", name: "tom tom", email: "tom@tom.com", uid: "123456", provider: "github", token: "654321", cohort: Cohort.find_by(name: 'Rock Doves')) }
 
   describe "GET #index" do
     it "responds with status 200" do
