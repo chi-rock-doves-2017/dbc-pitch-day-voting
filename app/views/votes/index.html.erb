@@ -1,0 +1,11 @@
+<div class="container">
+	<h2>Check out these sweet votes</h2>
+</div>
+
+<div class="votes-list">
+	<% @pitches.each do |pitch| %>
+		<%= render 'votes/vote', vote_pitch: pitch  %> 
+	<% end %>
+	<!-- other pitches get populated below in this space -->
+</div>
+
