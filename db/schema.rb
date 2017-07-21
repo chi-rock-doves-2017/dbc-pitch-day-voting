@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721195443) do
+ActiveRecord::Schema.define(version: 20170721005841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,6 @@ ActiveRecord::Schema.define(version: 20170721195443) do
     t.date "start"
     t.date "end"
     t.text "url"
-    t.date "pitch_start"
-    t.date "pitch_end"
-    t.date "round_one_voting_start"
-    t.date "round_one_voting_end"
-    t.datetime "round_two_voting_start"
-    t.datetime "round_two_voting_end"
   end
 
   create_table "pitches", force: :cascade do |t|
