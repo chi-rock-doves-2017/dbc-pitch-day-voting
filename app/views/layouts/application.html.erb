@@ -5,15 +5,16 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body class="badge--blue-lite">
+  <body class="badge--blue-lite body-background">
     <nav class="nav">
       <% if logged_in? %>
       <%= link_to 'Log Out', logout_path, method: :delete %>
       <% else %>
-      <a id="login-github" href="/auth/github"><button class="login button-primary button--teal">Sign in with Github</button></a>
+      <a id="login-github" href="/auth/github"><button class="login button-primary button--blue-dark">Sign in with Github</button></a>
       <% end %>
     </nav>
     <%= yield %>

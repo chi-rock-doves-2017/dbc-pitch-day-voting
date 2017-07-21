@@ -1,10 +1,12 @@
-<%= form_for @pitch do |f| %>
-  <%= f.label :title %>:
-  <%= f.text_field :title %>
-  <%= f.label :description %>:
-  <%= f.text_field :description %>
-  <%= f.label :pitchers %>:
-  <%= f.text_field :pitchers %>
+<div class="new-pitch-container">
+	<%= form_for @pitch do |f| %>
+	  <%= f.label :title %>:
+	  <%= f.text_field :title %>
+	  <%= f.label :description %>:
+	  <%= f.text_field :description %>
+	  <%= f.label :pitchers %>:
+	  <%= f.text_field :pitchers %>
 
-  <%= f.submit 'submit', id: 'submit-new-pitch', class: 'button-primary button--teal' %>
-<% end %>
+	  <%= f.submit 'submit', id: 'submit-new-pitch', class: 'button-primary button--teal' %>
+	<% end %>
+</div>
