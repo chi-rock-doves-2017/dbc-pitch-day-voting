@@ -1,6 +1,7 @@
 class Pitch < ApplicationRecord
   belongs_to :user
   has_many :votes
+  belongs_to :cohort
 
   def score(round)
     rank_score = {1=>5, 2=>4, 3=>3, 4=>2, 5=>1}

@@ -1,6 +1,7 @@
 class Cohort < ApplicationRecord
   has_many :validusers
   has_many :users
+  has_many :pitches
 
   def active
     Date.today.between?(self.start + 9.weeks, self.end)

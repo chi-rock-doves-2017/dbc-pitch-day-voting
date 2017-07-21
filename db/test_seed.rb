@@ -3,5 +3,11 @@ josh = User.create(nickname: "jmharvey0", name: "tom tom", email: "j@tom.com", u
 alycit = User.create(nickname: "alycit", name: "tom tom", email: "a@tom.com", uid: "123458", provider: "github", token: "654321", cohort: Cohort.find_by(name: 'Staff'))
 
 (1..10).each do |n|
-  Pitch.create(title: "Pitch #{n}", description: "Wow!", pitchers: alycit.nickname, user: alycit)
+  Pitch.create(
+    title: "Pitch #{n}",
+    description: "Wow!",
+    pitchers: alycit.nickname,
+    user: alycit,
+    cohort: Cohort.find_by(name: Cohort.current_cohort)
+    )
 end
