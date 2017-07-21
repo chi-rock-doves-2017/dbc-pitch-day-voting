@@ -33,6 +33,7 @@ class User < ApplicationRecord
       end
     end
     self.votes
+  end
 
   def staff?
     self.cohort.name == 'Staff'
@@ -40,6 +41,5 @@ class User < ApplicationRecord
 
   def phase_3?
     Date.today.between?(self.cohort.start + 15.weeks, self.cohort.end)
-
   end
 end

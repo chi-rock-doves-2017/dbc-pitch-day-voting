@@ -3,8 +3,8 @@
 </div>
 
 <div class="votes-list pitches-container">
-	<% @pitches.each do |pitch| %>
-		<%= render 'votes/vote', vote_pitch: pitch  %> 
+	<% @votes.each do |vote| %>
+		<%= render 'votes/vote', vote: vote  %>
 	<% end %>
 	<!-- other pitches get populated below in this space -->
 </div>

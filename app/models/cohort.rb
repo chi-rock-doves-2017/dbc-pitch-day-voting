@@ -1,8 +1,9 @@
 class Cohort < ApplicationRecord
   has_many :validusers
   has_many :users
+  has_many :pitches
 
-  def active
+  def active?
     Date.today.between?(self.start + 9.weeks, self.end)
   end
 
@@ -12,8 +13,8 @@ class Cohort < ApplicationRecord
 
   def self.current_cohort
     Cohort.all.each do |cohort|
-     if cohort.phase_3?
-        return cohort.name
+     if cohort.phase_3? && cohort.name != "Staff"
+        return cohort
       end
     end
   end
