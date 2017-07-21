@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe PitchesController do
-
+  let(:user) { User.create(nickname: "dhnaranjo", name: "tom tom", email: "tom@tom.com", uid: "123456", provider: "github", token: "654321", cohort: Cohort.find_by(name: 'Rock Doves')) }
 
   describe "GET #index" do
     it "responds with status 200" do
@@ -17,12 +17,14 @@ describe PitchesController do
       pitch_one = {
         title: Faker::Lovecraft.sentence,
         description: Faker::Lovecraft.paragraphs(3).join(" "),
-        pitchers: Faker::Lovecraft.deity
+        pitchers: Faker::Lovecraft.deity,
+        user_id: user.id
       }
       pitch_two = {
         title: Faker::Lovecraft.sentence,
         description: Faker::Lovecraft.paragraphs(3).join(" "),
-        pitchers: [Faker::Lovecraft.deity, Faker::Lovecraft.deity]
+        pitchers: [Faker::Lovecraft.deity, Faker::Lovecraft.deity],
+        user_id: user.id
       }
 
       Pitch.create(pitch_one)
@@ -52,7 +54,7 @@ describe PitchesController do
     context "when valid params are passed" do
 
       def create_pitch
-        post :create, params: { pitch: { title: 'Killer Pitch!', description: "DISRUPTION!", pitchers: "Frankie!" } }
+        post :create, params: { pitch: { title: 'Killer Pitch!', description: "DISRUPTION!", pitchers: "Frankie!", user_id: user.id } }
       end
 
       it "responds with status code 302" do

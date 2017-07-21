@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720012149) do
+
+ActiveRecord::Schema.define(version: 20170721195443) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +21,13 @@ ActiveRecord::Schema.define(version: 20170720012149) do
     t.string "name"
     t.date "start"
     t.date "end"
+    t.text "url"
+    t.datetime "pitch_start"
+    t.datetime "pitch_end"
+    t.datetime "round_one_voting_start"
+    t.datetime "round_one_voting_end"
+    t.datetime "round_two_voting_start"
+    t.datetime "round_two_voting_end"
   end
 
   create_table "pitches", force: :cascade do |t|
@@ -27,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170720012149) do
     t.string "pitchers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,6 +48,28 @@ ActiveRecord::Schema.define(version: 20170720012149) do
     t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "cohort_id"
+    t.index ["cohort_id"], name: "index_users_on_cohort_id"
   end
 
+  create_table "valid_users", force: :cascade do |t|
+    t.text "nickname"
+    t.bigint "cohort_id"
+    t.index ["cohort_id"], name: "index_valid_users_on_cohort_id"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.bigint "voter_id"
+    t.bigint "pitch_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "vote_round"
+    t.integer "rank"
+    t.index ["pitch_id"], name: "index_votes_on_pitch_id"
+    t.index ["voter_id"], name: "index_votes_on_voter_id"
+  end
+
+  add_foreign_key "users", "cohorts"
+  add_foreign_key "valid_users", "cohorts"
+  add_foreign_key "votes", "pitches"
 end
